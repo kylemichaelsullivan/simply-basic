@@ -1,0 +1,20 @@
+// main: ../../style.scss
+@mixin flex($justify-content: null, $flex-direction: row, $flex-wrap: wrap) {
+  display: flex;
+  flex-flow: $flex-direction $flex-wrap;
+  @if $justify-content == 'a' {
+    justify-content: space-around;
+  } @else if $justify-content == 'b' {
+    justify-content: space-between;
+  } @else if $justify-content == 'c' {
+    justify-content: center;
+  } @else if $justify-content == 'd' {
+    justify-content: unset;
+  } @else if $justify-content == 'e' {
+    justify-content: space-evenly;
+  } @else if $justify-content == 'fs' {
+    justify-content: flex-start;
+  } @else if $justify-content == 'fe' {
+    justify-content: flex-end;
+  }
+}

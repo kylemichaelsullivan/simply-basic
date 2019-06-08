@@ -1,0 +1,28 @@
+{
+	"version": 3,
+	"file": "style.min.css",
+	"sources": [
+		"style.scss",
+		"sass/_site.scss",
+		"sass/__normalize/__compile.scss",
+		"sass/__normalize/_normalize.scss",
+		"sass/variables/__compile.scss",
+		"sass/variables/colors/__compile.scss",
+		"sass/variables/colors/_bootstrap.scss",
+		"sass/variables/colors/_hues.scss",
+		"sass/variables/colors/_colors.scss",
+		"sass/variables/_fonts.scss",
+		"sass/variables/_dimensions.scss",
+		"sass/variables/_breakpoints.scss",
+		"sass/mixins/__compile.scss",
+		"sass/mixins/_grid.scss",
+		"sass/mixins/_flex.scss",
+		"sass/classes/__compile.scss",
+		"sass/classes/_classes.scss",
+		"sass/headers/__compile.scss",
+		"sass/navigation/__compile.scss",
+		"sass/footers/__compile.scss"
+	],
+	"names": [],
+	"mappings": "AGCA,AAAA,IAAI,AAAC,CACH,MAAM,CAAE,CAAC,CACV,AaFD,AAAA,YAAY,AAAC,CACX,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,MAAM,CACf"
+}

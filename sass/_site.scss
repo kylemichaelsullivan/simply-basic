@@ -1,0 +1,10 @@
+// main: ../style.scss
+
+@import "__normalize/_compile";
+@import "variables/_compile";
+@import "mixins/_compile";
+@import "classes/_compile";
+
+@import "headers/_compile";
+@import "navigation/_compile";
+@import "footers/_compile";
