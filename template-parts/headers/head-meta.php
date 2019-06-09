@@ -10,17 +10,19 @@
 ?>
 
 <?php
+  $description = "A WordPress Theme designed to let you build sites from the ground up without the tedium.";
+
   $meta = [
     "application-name"  => "Simply Basic",
     "author"            => "By Law 4 Law",
-    "description"       => "A WordPress Theme to designed to let you build sites from the ground up without the tedium.",
+    "description"       => $description,
     "keywords"          => "simple, basic, scaffolding, framework, custom",
     "viewport"          => "width=device-width, initial-scale=1"
   ];
 
   $og = [
     "image"       => get_bloginfo('stylesheet_directory') . "/screenshot.png",
-    "description" => "A WordPress Theme to designed to let you build sites from the ground up without the tedium.",
+    "description" => $description,
     "title"       => "This site has been built on Simply Basic"
   ];
 ?>
