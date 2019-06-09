@@ -1,0 +1,15 @@
+// main: ../../style.scss
+footer {
+  position: static;
+  border-top: 1px solid $black;
+  width: 100%;
+  padding: 1em 0;
+  bottom: 0;
+  a.site-name {
+    color: $black;
+    text-decoration: none;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
