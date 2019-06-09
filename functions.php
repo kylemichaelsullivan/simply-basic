@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Nineteen functions and definitions
+ * Simply Basic functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -24,7 +24,6 @@ if( ! function_exists( 'enqueue_cdn_styles' ) ) {
     foreach ($cdn_styles as $handle => $src) {
       wp_enqueue_style($handle, $src);
     }
-
   }
   add_action('wp_enqueue_scripts', 'enqueue_cdn_styles');
 }
@@ -39,10 +38,21 @@ if( ! function_exists( 'enqueue_cdn_scripts' ) ) {
     foreach ($cdn_scripts as $handle => $src) {
       wp_enqueue_script($handle, $src);
     }
-
   }
   add_action('wp_enqueue_scripts', 'enqueue_cdn_scripts');
 }
+
+/* Register Navigation Menus */
+if( ! function_exists( 'register_custom_nav_menus' ) ) {
+  function register_custom_nav_menus() {
+  	register_nav_menus( array(
+  		'menu-1' => 'Main Navigation',
+  		'footer' => 'Footer Menu',
+  	) );
+  }
+  add_action( 'after_setup_theme', 'register_custom_nav_menus' );
+}
+
 
 /* Enqueue Theme Styles */
 if( ! function_exists( 'enqueue_theme_styles' ) ) {
@@ -90,5 +100,25 @@ if( ! function_exists( 'get_template_part_by_slug' ) ) {
   function get_template_part_by_slug($prefix = "content") {
     $slug = get_post_field( 'post_name', get_post() );
     get_template_part('template-parts/content/' . $prefix, $slug);
+  }
+}
+
+/* Add get_phone_link() */
+if( ! function_exists( 'get_phone_link' ) ) {
+  function get_phone_link($input) {
+    $tel = preg_replace("/[^\d]/", "", $input);
+    $output = 'tel:+1-' . substr($tel, 0, 3) . '-' . substr($tel, 3, 3) . '-' . substr($tel, 6, 4);
+    if( strlen($tel) > 10 ) $output .= ";" . substr($tel, 10);
+    return $output;
+  }
+}
+
+/* Add the_phone_link() */
+if( ! function_exists( 'the_phone_link' ) ) {
+  function the_phone_link($input) {
+    $tel = preg_replace("/[^\d]/", "", $input);
+    $output = 'tel:+1-' . substr($tel, 0, 3) . '-' . substr($tel, 3, 3) . '-' . substr($tel, 6, 4);
+    if( strlen($tel) > 10 ) $output .= ";" . substr($tel, 10);
+    echo $output;
   }
 }
