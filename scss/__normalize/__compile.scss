@@ -1,3 +1,11 @@
 // main: ../../style.scss
 
-@import "normalize";
+@import "document";
+@import "sections";
+@import "grouping-content";
+@import "text-level-semantics";
+@import "embedded-content";
+@import "forms";
+@import "interactive";
+@import "miscellaneous";
+@import "simplyBasic";
