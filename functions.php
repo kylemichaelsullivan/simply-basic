@@ -84,6 +84,13 @@ if( ! function_exists( 'enqueue_theme_scripts' ) ) {
 if( ! function_exists( 'add_theme_support_options' ) ) {
   function add_theme_support_options() {
     $options = [
+      'custom-logo' =>  $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => [ 'site-title', 'site-description' ],
+        ),
       'post-thumbnails' => null,
       'title-tag' => null
     ];
