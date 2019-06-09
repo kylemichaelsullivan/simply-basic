@@ -103,9 +103,9 @@ if( ! function_exists( 'get_template_part_by_slug' ) ) {
   }
 }
 
-/* Add get_phone_link() */
-if( ! function_exists( 'get_phone_link' ) ) {
-  function get_phone_link($input) {
+/* Add phone_link() */
+if( ! function_exists( 'phone_link' ) ) {
+  function phone_link($input) {
     $tel = preg_replace("/[^\d]/", "", $input);
     $output = 'tel:+1-' . substr($tel, 0, 3) . '-' . substr($tel, 3, 3) . '-' . substr($tel, 6, 4);
     if( strlen($tel) > 10 ) $output .= ";" . substr($tel, 10);
@@ -113,12 +113,16 @@ if( ! function_exists( 'get_phone_link' ) ) {
   }
 }
 
+/* Add get_phone_link() */
+if( ! function_exists( 'get_phone_link' ) ) {
+  function get_phone_link($input) {
+    return phone_link($input);
+  }
+}
+
 /* Add the_phone_link() */
 if( ! function_exists( 'the_phone_link' ) ) {
   function the_phone_link($input) {
-    $tel = preg_replace("/[^\d]/", "", $input);
-    $output = 'tel:+1-' . substr($tel, 0, 3) . '-' . substr($tel, 3, 3) . '-' . substr($tel, 6, 4);
-    if( strlen($tel) > 10 ) $output .= ";" . substr($tel, 10);
-    echo $output;
+    echo "<a href=\"" . phone_link($input) . "\">" . phone_link($input) . "</a>";
   }
 }
