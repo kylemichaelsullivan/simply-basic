@@ -9,9 +9,11 @@
  */
 ?>
 
-<header class="site-header">
-  <div class="container-fluid">
-    <h1>Site Header</h1>
-    <?php get_template_part('template-parts/headers/navbar'); ?>
+<header class="site-header" id="masthead">
+  <div class="container">
+    <div class="site-branding-container">
+      <?php get_template_part( 'template-parts/headers/site', 'branding' ); ?>
+    </div>
+    <?php get_template_part('template-parts/navigation/navbar'); ?>
   </div>
 </header>
