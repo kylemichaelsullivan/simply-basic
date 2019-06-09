@@ -1,4 +1,15 @@
 <?php
+/**
+ * This is the template for meta data in <head>
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package simplyBasic
+ * @since 0.0.0
+ */
+?>
+
+<?php
   $meta = [
     "application-name"  => "Simply Basic",
     "author"            => "By Law 4 Law",
