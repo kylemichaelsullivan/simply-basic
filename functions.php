@@ -1,4 +1,15 @@
 <?php
+/**
+ * Twenty Nineteen functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package simplyBasic
+ * @since 0.0.0
+ */
+?>
+
+<?php
 /* Always sync the version in style.css! */
 $version = "0.0.0";
 
@@ -72,4 +83,12 @@ if( ! function_exists( 'add_theme_support_options' ) ) {
     }
   }
   add_action('after_setup_theme', 'add_theme_support_options');
+}
+
+/* Add get_template_part_by_slug() */
+if( ! function_exists( 'get_template_part_by_slug' ) ) {
+  function get_template_part_by_slug($prefix = "content") {
+    $slug = get_post_field( 'post_name', get_post() );
+    get_template_part('template-parts/content/' . $prefix, $slug);
+  }
 }
